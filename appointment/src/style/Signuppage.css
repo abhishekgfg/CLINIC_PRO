@@ -1,0 +1,51 @@
+/* Desktop layout */
+.signup-page {
+  display: flex;
+  margin-top: 50px;
+  margin-left: -30px;
+}
+
+.signup-content {
+  flex: 1;
+  padding: 40px;
+  margin-left: 240px; /* space for sidebar */
+}
+
+.signup-page {
+  display: flex;
+  margin-top: 50px;
+  margin-left: -30px;
+}
+
+.signup-content {
+  flex: 1;
+  padding: 40px;
+  margin-left: 240px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .signup-content {
+    margin-left: 0 !important;
+    padding: 15px !important;
+  }
+
+  .signup-content .login-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* Mobile layout - shift content and reduce card width */
+@media (max-width: 768px) {
+  .signup-content {
+    margin-left: 0 !important;
+    padding: 15px !important;
+  }
+
+  .signup-content .login-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

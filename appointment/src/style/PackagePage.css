@@ -1,0 +1,226 @@
+/* ================================
+   📦 Package Page - Full Styling
+================================== */
+
+.package-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .package-page {
+    flex-direction: row;
+  }
+}
+
+.package-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.package-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* ===================
+   ✅ Filter Grid
+=================== */
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .filter-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-grid input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===================
+   Table Container
+=================== */
+
+.package-table-wrapper {
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+  padding: 10px;
+}
+
+.package-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+.package-table th,
+.package-table td {
+  padding: 12px 14px;
+  border: 1px solid #e1e1e1;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.package-table th {
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.package-table td {
+  color: #2d3436;
+}
+
+/* ===================
+   Status Controls
+=================== */
+
+.package-table select {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  width: 150px;
+}
+
+.package-table button {
+  margin-top: 6px;
+  margin-left: 6px;
+  padding: 6px 12px;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s ease;
+}
+
+.package-table button:hover {
+  background-color: #27ae60;
+}
+
+/* ===================
+   Responsive Styling
+=================== */
+
+@media screen and (max-width: 992px) {
+  .package-content {
+    padding: 16px;
+  }
+
+  .package-title {
+    font-size: 22px;
+  }
+
+  .package-table {
+    font-size: 13px;
+  }
+
+  .package-table th,
+  .package-table td {
+    padding: 10px 12px;
+  }
+
+  .package-table select {
+    width: 140px;
+    font-size: 12px;
+  }
+
+  .package-table button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .package-content {
+    padding: 10px;
+  }
+
+  .package-title {
+    font-size: 18px;
+  }
+
+  .package-table {
+    font-size: 12px;
+    min-width: 1000px;
+  }
+
+  .package-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .package-table th,
+  .package-table td {
+    padding: 8px 10px;
+  }
+
+  .package-table select {
+    font-size: 11px;
+    width: 130px;
+  }
+
+  .package-table button {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+
+
+/* Responsive 5-column for desktop, 3-column for mobile */
+.filter-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 768px) {
+  .filter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.filter-grid input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-heading {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: #333;
+}

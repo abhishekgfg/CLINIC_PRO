@@ -1,0 +1,205 @@
+/* Page Layout */
+.google-sheet-page {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Main Content Area */
+.google-sheet-content {
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 250px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: auto; /* allow horizontal scroll if needed */
+}
+
+.google-sheet-content h2,
+.google-sheet-content h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input Form Section */
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.input-group1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-group1 label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.input-group1 input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-section button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 150px;
+}
+
+/* Table Scroll Wrapper (Desktop + Mobile) */
+.sheet-table-container {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch; /* smooth scroll for iOS */
+}
+
+/* Table Styles */
+.sheet-table {
+  width: 100%;
+  min-width: 1000px; /* forces horizontal scroll on small screens */
+  border-collapse: collapse;
+  font-size: 15px;
+  table-layout: auto;
+}
+
+.sheet-table th,
+.sheet-table td {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  text-align: left;
+  white-space: nowrap; /* prevents text wrapping */
+}
+
+.sheet-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.sheet-table select {
+  padding: 6px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Scrollbar Styling (Optional) */
+.sheet-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+.sheet-table-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .google-sheet-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .google-sheet-content h2,
+  .google-sheet-content h3 {
+    font-size: 20px;
+  }
+
+  .input-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-group1 input,
+  .input-section button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+
+
+/* Ensure this class is scoped correctly */
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .google-sheet-page {
+    margin-top: 70px; /* ✅ 50px top margin on mobile */
+  }
+
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-group1 {
+    width: 100%;
+  }
+
+  .input-group1 input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .input-section button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

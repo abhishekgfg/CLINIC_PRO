@@ -1,0 +1,122 @@
+.chithi-page {
+  display: flex;
+  justify-content: center;
+  background: #f4f6f8;
+  min-height: 100vh;
+}
+
+.chithi-content {
+  width: 1000px;
+  margin-left: 250px;
+  padding: 20px;
+  overflow-x: auto;
+  background: #f8f9fc;
+}
+
+.chithi-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.chithi-search {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.chithi-table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.chithi-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.chithi-table th,
+.chithi-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.chithi-table th {
+  background-color: #3182ce; /* Blue header */
+  color: white;
+  font-weight: bold;
+}
+
+.chithi-table tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.search-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.filter-group input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .chithi-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .chithi-title {
+    font-size: 22px;
+    margin-top: 70px;
+  }
+
+  .chithi-search {
+    width: 100%;
+  }
+
+  .chithi-table {
+    min-width: 800px;
+    font-size: 13px;
+  }
+
+  .search-filters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .filter-group input {
+    font-size: 13px;
+  }
+}
+
+

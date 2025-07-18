@@ -1,0 +1,235 @@
+/* Patients.css */
+
+/* General page styling */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Card for form and import */
+.card-wrapper {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.add-patient-form1 input,
+.add-patient-form1 button {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.add-patient-form1 button {
+  background-color: #2f3542;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.table-card {
+  width: 100%;
+  max-width: 950px;
+  margin-left: 250px;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .table-card {
+    margin: 20px 10px;
+  }
+}
+
+
+
+
+.card{
+     width: 100%;
+  max-width: 950px;
+  margin-left: 250px;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .card {
+    margin: 20px 10px;
+  }
+}
+
+
+
+/* For tablets and phones: override left margin */
+
+
+
+
+.add-patient-form1 button:hover {
+  background-color: #1e272e;
+}
+
+/* Import file input */
+.import-section {
+  margin-top: 20px;
+}
+
+.import-section h4 {
+  margin-bottom: 8px;
+}
+
+.file-upload {
+  width: 100%;
+}
+
+/* Table styling */
+.table-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.delete-selected-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  float: right;
+  width:200px;
+}
+
+.delete-selected-btn:hover {
+  background-color: #c0392b;
+  
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patients-table th,
+.patients-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.patients-table th {
+  background-color: #f8f9fa;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+.status-dropdown {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.edit-btn,
+.delete-btn {
+  margin-right: 6px;
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .content {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .delete-selected-btn {
+    float: none;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .add-patient-form1 {
+    width: 100% !important;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .patients-table {
+    font-size: 13px;
+  }
+}
+

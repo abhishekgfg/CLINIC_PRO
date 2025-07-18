@@ -1,0 +1,159 @@
+/* 🌟 Layout Container */
+.follow-up-container {
+  padding: 24px;
+  background-color: #f3f6fc;
+  font-family: 'Segoe UI', sans-serif;
+  margin-left: 250px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* 📱 Mobile Spacing */
+@media (max-width: 768px) {
+  .follow-up-container {
+    margin-left: 0;
+    margin-top: 50px;
+    padding: 20px 15px;
+  }
+}
+
+/* 🔖 Title */
+.follow-up-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a237e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔍 Search Input */
+.follow-up-search {
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #b0bec5;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.follow-up-search:focus {
+  border-color: #1e88e5;
+}
+
+/* 📜 Table Scroll Wrapper */
+.follow-up-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 📊 Stylish Table */
+.follow-up-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 🧱 Table Cells */
+.follow-up-table th,
+.follow-up-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+/* 🧱 Table Cells with column lines */
+.follow-up-table th,
+.follow-up-table td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 14px;
+  border-right: 1px solid #e0e0e0; /* ✅ Vertical column line */
+  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
+}
+
+/* Remove last column's right border for clean edge */
+.follow-up-table th:last-child,
+.follow-up-table td:last-child {
+  border-right: none;
+}
+
+.follow-up-search {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 300px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.follow-up-table-wrapper {
+  overflow-x: auto;
+}
+
+.follow-up-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.follow-up-table th,
+.follow-up-table td {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.follow-up-table th {
+  background-color: #e6f1ff;
+  color: #004085;
+  font-weight: bold;
+}
+
+/* 🟦 Table Headers */
+.follow-up-table th {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* 🪄 Hover Row */
+.follow-up-table tr:hover {
+  background-color: #f1f8ff;
+  transition: background 0.2s ease;
+}
+
+/* ⚠️ No data row */
+.follow-up-table td[colspan] {
+  text-align: center;
+  padding: 30px 10px;
+  font-style: italic;
+  color: #888;
+}
+
+/* 🌐 Scrollbar Styling (optional) */
+.follow-up-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.follow-up-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #90caf9;
+  border-radius: 4px;
+}
+.follow-up-table-wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+}

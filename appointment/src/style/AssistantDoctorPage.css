@@ -1,0 +1,177 @@
+/* Page Layout */
+.assistant-doctor-content {
+  width: 1000px;
+  margin-left: 250px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+
+.assistant-doctor-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.assistant-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Search */
+.search-bar input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Table */
+.assistant-table-wrapper {
+  overflow-x: auto;
+}
+
+.assistant-doctor-table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.assistant-doctor-table th,
+.assistant-doctor-table td {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.assistant-doctor-table th {
+  background-color: #f2f2f2;
+}
+
+.assistant-doctor-table input,
+.assistant-doctor-table select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+/* Buttons */
+.table-actions button {
+  margin: 2px 5px 2px 0;
+  padding: 5px 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* AssistantDoctorPage.css */
+
+.assistant-doctor-table th,
+.assistant-doctor-table td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.assistant-doctor-table th:nth-child(9),
+.assistant-doctor-table td:nth-child(9), /* Status column */
+.assistant-doctor-table th:nth-child(10),
+.assistant-doctor-table td:nth-child(10) /* Details column */ {
+  min-width: 160px;
+}
+
+.assistant-doctor-table td input,
+.assistant-doctor-table td select {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+
+
+/* Increase width for datetime and other wide inputs */
+.wide-input {
+  width: 220px;
+}
+
+.assistant-doctor-table td:nth-child(4), /* Date */
+.assistant-doctor-table td:nth-child(5), /* Time */
+.assistant-doctor-table td:nth-child(12) /* Next Follow Up */
+{
+  min-width: 180px;
+}
+
+.assistant-doctor-table td .action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.assistant-doctor-table td .action-buttons button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  background-color: #008080;
+  transition: background-color 0.3s ease;
+}
+
+.assistant-doctor-table td .action-buttons button:hover {
+  background-color: #006666;
+}
+
+.assistant-doctor-table td .action-buttons .delete-btn {
+  background-color: #cc0000;
+}
+
+.assistant-doctor-table td .action-buttons .delete-btn:hover {
+  background-color: #990000;
+}
+
+
+.table-actions button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .assistant-doctor-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .assistant-doctor-table {
+   
+    font-size: 12px;
+  }
+
+  .assistant-doctor-table th,
+  .assistant-doctor-table td {
+    padding: 8px;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .assistant-title {
+    margin-top: 80px;
+  }
+}

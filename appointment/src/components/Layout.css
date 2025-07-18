@@ -1,0 +1,28 @@
+/* src/components/Layout.css */
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #222;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 380px; /* or 180px if you want narrower */
+  }
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}

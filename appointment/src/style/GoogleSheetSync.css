@@ -1,0 +1,50 @@
+.sheet-sync-container {
+  margin-top: 40px;
+  margin-left: 250px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.sheet-sync-container h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.sheet-sync-container input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+.sheet-sync-container button {
+  padding: 10px 18px;
+  background-color: #2ed573;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sheet-sync-container .disconnect-btn {
+  background-color: #ff4757;
+}
+
+.sheet-sync-container .connected-status {
+  color: green;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .sheet-sync-container {
+    margin-left: 0 !important;
+    padding: 16px;
+  }
+}
