@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../style/Login.css";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // ⬅️ Font Awesome
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Login = () => {
   const [isSignup, setIsSignup] = useState(false);
@@ -14,6 +14,9 @@ const Login = () => {
 
   const [loginForm, setLoginForm] = useState({ username: "", password: "" });
   const [signupForm, setSignupForm] = useState({ username: "", password: "", role: "counser" });
+
+  const [showLoginPassword, setShowLoginPassword] = useState(false);
+  const [showSignupPassword, setShowSignupPassword] = useState(false);
 
   useEffect(() => {
     const checkAdmin = async () => {
@@ -65,9 +68,12 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-        {/* Manovaidya Logo and Welcome */}
         <div className="logo-section">
-          <img src="	https://manovaidya.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1c88d462.png&w=640&q=75" alt="Manovaidya Logo" className="logo-image" />
+          <img
+            src="https://manovaidya.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1c88d462.png&w=640&q=75"
+            alt="Manovaidya Logo"
+            className="logo-image"
+          />
           <h3 className="welcome-text">Welcome!</h3>
         </div>
 
@@ -88,17 +94,25 @@ const Login = () => {
                   required
                 />
               </div>
+
               <div className="input-group">
                 <i className="fas fa-lock icon" />
                 <input
-                  type="password"
+                  type={showSignupPassword ? "text" : "password"}
                   name="password"
                   placeholder="Create Admin Password"
                   value={signupForm.password}
                   onChange={(e) => handleChange(e, false)}
                   required
                 />
+                <span
+                  onClick={() => setShowSignupPassword((prev) => !prev)}
+                  className="toggle-eye"
+                >
+                  <i className={`fas ${showSignupPassword ? "fa-eye-slash" : "fa-eye"}`} />
+                </span>
               </div>
+
               <select name="role" value="admin" disabled>
                 <option value="admin">Admin</option>
               </select>
@@ -120,13 +134,19 @@ const Login = () => {
               <div className="input-group">
                 <i className="fas fa-lock icon" />
                 <input
-                  type="password"
+                  type={showLoginPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   value={loginForm.password}
                   onChange={(e) => handleChange(e, true)}
                   required
                 />
+                <span
+                  onClick={() => setShowLoginPassword((prev) => !prev)}
+                  className="toggle-eye"
+                >
+                  <i className={`fas ${showLoginPassword ? "fa-eye-slash" : "fa-eye"}`} />
+                </span>
               </div>
               <button type="submit">Login</button>
 
@@ -158,13 +178,19 @@ const Login = () => {
             <div className="input-group">
               <i className="fas fa-lock icon" />
               <input
-                type="password"
+                type={showSignupPassword ? "text" : "password"}
                 name="password"
                 placeholder="New Password"
                 value={signupForm.password}
                 onChange={(e) => handleChange(e, false)}
                 required
               />
+              <span
+                onClick={() => setShowSignupPassword((prev) => !prev)}
+                className="toggle-eye"
+              >
+                <i className={`fas ${showSignupPassword ? "fa-eye-slash" : "fa-eye"}`} />
+              </span>
             </div>
             <select name="role" value={signupForm.role} onChange={(e) => handleChange(e, false)}>
               <option value="counser">Counser</option>

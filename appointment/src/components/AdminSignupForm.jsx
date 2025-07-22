@@ -11,7 +11,7 @@ const AdminSignupForm = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    role: "counser",
+    role: "", // Default empty to force selection
   });
 
   const [users, setUsers] = useState([]);
@@ -49,7 +49,10 @@ const AdminSignupForm = () => {
         headers: { role: user?.role },
       });
       alert("User created successfully");
-      setFormData({ username: "", password: "", role: "counser" });
+
+      // ✅ Clear form fields after submit
+      setFormData({ username: "", password: "", role: "" });
+      document.activeElement.blur(); // optional: remove focus
       fetchUsers();
     } catch (err) {
       alert(err.response?.data?.error || "Signup failed");
@@ -79,16 +82,31 @@ const AdminSignupForm = () => {
 
   return (
     <div className="login-container" style={{ display: "flex", gap: "30px", flexWrap: "wrap" }}>
-      {/* Form */}
+      {/* Form Section */}
       <div className="login-card" style={{ flex: "1", minWidth: "300px" }}>
         <h2>Create New User</h2>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="username" placeholder="Username" value={formData.username} onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} required />
-          <select name="role" value={formData.role} onChange={handleChange}>
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <select name="role" value={formData.role} onChange={handleChange} required>
+            <option value="">-- Choose Role --</option>
             <option value="counser">Counser</option>
             <option value="receptionist">Receptionist</option>
-            <option Value="Assistant Doctor">Assistant Doctor</option>
+            <option value="Assistant Doctor">Assistant Doctor</option>
             <option value="account">Account</option>
             <option value="medicine">Medicine</option>
             <option value="chithi">Chithi</option>
@@ -98,12 +116,15 @@ const AdminSignupForm = () => {
           </select>
           <button type="submit">Create User</button>
         </form>
-        <button style={{ marginTop: "10px" }} onClick={() => navigate("/dashboard")}>
+        <button
+          style={{ marginTop: "10px" }}
+          onClick={() => navigate("/dashboard")}
+        >
           Back to Dashboard
         </button>
       </div>
 
-      {/* User Table */}
+      {/* Users Table */}
       <div className="login-card" style={{ flex: "2", minWidth: "300px", overflowX: "auto" }}>
         <h2>All Users</h2>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
@@ -159,6 +180,7 @@ const AdminSignupForm = () => {
   );
 };
 
+// Table styles
 const thStyle = {
   borderBottom: "2px solid #888",
   padding: "8px",

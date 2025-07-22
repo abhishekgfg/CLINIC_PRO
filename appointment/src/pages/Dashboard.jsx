@@ -117,7 +117,7 @@ const DashboardHome = ({
       </div>
       <div
         className="stats-overview"
-        style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginTop: "20px" }}
+       
       >
         {renderCard("Patients", <FaUserFriends />, "/patients", "patients", patients, newCounts.patients)}
         {renderCard("Appointments", <FaCalendarAlt />, "/appointments", "appointments", appointments, newCounts.appointments)}

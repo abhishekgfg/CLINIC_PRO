@@ -1,25 +1,24 @@
 /* Desktop layout */
 .signup-page {
   display: flex;
-  margin-top: 50px;
-  margin-left: -30px;
+  
+ 
 }
 
 .signup-content {
   flex: 1;
-  padding: 40px;
-  margin-left: 240px; /* space for sidebar */
+ 
+  
 }
 
 .signup-page {
   display: flex;
-  margin-top: 50px;
-  margin-left: -30px;
+ 
 }
 
 .signup-content {
   flex: 1;
-  padding: 40px;
+  
   margin-left: 240px;
 }
 

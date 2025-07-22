@@ -26,3 +26,18 @@
   overflow-y: auto;
   background-color: #f8f9fa;
 }
+/* Layout.css */
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+ 
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 240px);
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
