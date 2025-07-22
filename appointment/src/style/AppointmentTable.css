@@ -277,3 +277,32 @@
     margin-top: 80px;
   }
 }
+
+
+.appointments-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 20px;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.appointments-controls input,
+.appointments-controls select,
+.appointments-controls button {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ Responsive for Mobile Devices */
+@media (max-width: 768px) {
+  .appointments-controls {
+    grid-template-columns: 1fr;
+  }
+}
