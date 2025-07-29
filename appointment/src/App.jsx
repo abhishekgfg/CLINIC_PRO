@@ -16,6 +16,8 @@ import GoogleSheetPage from "./pages/GoogleSheetPage";
 import FollowUpPage from "./pages/FollowUpPage";
 import SignupPage from "./pages/SignupPage";
 import Layout from "./components/Layout"; // ✅ Only one import
+import AttendencPage from "./pages/AttendencPage";
+
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
@@ -42,6 +44,7 @@ const AppRoutes = () => {
       <Route path="/courier" element={<ProtectedRoute><Layout><CourierPage /></Layout></ProtectedRoute>} />
       <Route path="/google-sheet" element={<ProtectedRoute><Layout><GoogleSheetPage /></Layout></ProtectedRoute>} />
       <Route path="/follow-up" element={<ProtectedRoute><Layout><FollowUpPage /></Layout></ProtectedRoute>} />
+       <Route path="/attendenc" element={<ProtectedRoute><Layout><AttendencPage /></Layout></ProtectedRoute>} />
     </Routes>
   );
 };

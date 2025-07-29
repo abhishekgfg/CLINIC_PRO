@@ -19,6 +19,7 @@ import {
   FaTruck,
   FaRedo,
 } from "react-icons/fa";
+import DashboardStatsChart from "./DashboardStatsChart";
 
 const DashboardHome = ({
   patients,
@@ -170,6 +171,17 @@ const DashboardHome = ({
           )}
         </div>
       </div>
+       <DashboardStatsChart
+  patients={patients}
+  appointments={appointments}
+  assistantData={assistantData}
+  accountData={accountData}
+  medicineData={medicineData}
+  chithiData={chithiData}
+  packagingData={packagingData}
+  courierData={courierData}
+  rescheduledCount={rescheduledAppointmentsCount}
+/>
     </>
   );
 };

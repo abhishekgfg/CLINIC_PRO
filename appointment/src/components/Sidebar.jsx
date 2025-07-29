@@ -17,6 +17,8 @@ import "../style/Sidebar.css";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FaCalendarCheck } from "react-icons/fa";
+// import { FaClipboardCheck } from "react-icons/fa";
+
 
 
 
@@ -39,6 +41,8 @@ const Sidebar = () => {
   { name: "Packaging", icon: <FaBox />, path: "/packaging" },
    { name: "Courier", icon: <FaTruck />, path: "/courier" },
     { name: "Follow-Up", icon: <FaCalendarCheck />, path: "/follow-up" },
+    // { name: "Attendenc", icon: <FaClipboardCheck />, path: "/attendenc" },
+
    
 ];
 
