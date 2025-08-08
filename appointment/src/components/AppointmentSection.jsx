@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import { useAuth } from "../context/AuthContext";
 import AppointmentTable from "../components/AppointmentTable";
 
@@ -41,7 +41,7 @@ const AppointmentsSection = ({ patients }) => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("/api/appointments");
+      const res = await axios.get("/appointments");
       setAppointments(res.data);
     } catch (error) {
       console.error("Error fetching appointments:", error);
@@ -74,7 +74,7 @@ const AppointmentsSection = ({ patients }) => {
     }
 
     try {
-      await axios.post("/api/appointments/add", formData, {
+      await axios.post("/appointments/add", formData, {
         headers: {
           username: user.username,
         },
@@ -99,7 +99,7 @@ const AppointmentsSection = ({ patients }) => {
     if (!confirmed) return;
 
     try {
-      await axios.delete(`/api/appointments/${id}`);
+      await axios.delete(`/appointments/${id}`);
       setAppointments((prev) => prev.filter((item) => item._id !== id));
     } catch (error) {
       console.error("Error deleting appointment:", error);
@@ -109,7 +109,7 @@ const AppointmentsSection = ({ patients }) => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      await axios.patch(`/api/appointments/${id}/status`, { status: newStatus });
+      await axios.patch(`/appointments/${id}/status`, { status: newStatus });
       setAppointments((prev) =>
         prev.map((item) => (item._id === id ? { ...item, status: newStatus } : item))
       );

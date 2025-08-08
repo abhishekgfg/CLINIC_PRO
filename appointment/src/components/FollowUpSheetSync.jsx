@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/GoogleSheetSync.css";
 
 const FOLLOWUP_SERVICE_EMAIL = "clinic-service@aerobic-entropy-464510-h1.iam.gserviceaccount.com";
@@ -71,7 +71,7 @@ const FollowUpSheetSync = ({ followUpData }) => {
     console.log("🟡 Sending unsynced follow-up records:", unsynced);
 
     axios
-      .post("/api/sync-followup-to-sheet", {
+      .post("/sync-followup-to-sheet", {
         sheetId,
         data: unsynced,
       })

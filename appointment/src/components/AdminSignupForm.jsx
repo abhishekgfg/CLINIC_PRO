@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/Login.css";
 
 const AdminSignupForm = () => {
@@ -28,7 +28,7 @@ const AdminSignupForm = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/all-users", {
+      const res = await axios.get("/auth/all-users", {
         headers: { role: user?.role },
       });
       setUsers(res.data);

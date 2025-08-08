@@ -5,15 +5,22 @@
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   flex-direction: row;
+  
 }
 
 .appointments-content {
-  flex: 1;
-  max-width: 950px;
-  margin-left: 250px;
-  padding: 30px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+ margin-left: 250px; /* 👈 offset for fixed sidebar */
+  padding: 20px;
+  overflow-x: auto;
+  width: calc(100% - 250px); /* optional but ensures no overflow */
+  box-sizing: border-box;  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 768px) {
+  .appointments-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
 }
 
 /* Title */

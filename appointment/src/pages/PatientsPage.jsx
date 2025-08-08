@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import Sidebar from "../components/Sidebar";
 import PatientsSection from "../components/PatientsSection";
 import { useAuth } from "../context/AuthContext"; // ✅ Add this
@@ -13,7 +13,7 @@ const PatientsPage = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("/api/patients/all", {
+      const res = await axios.get("/patients/all", {
         headers: {
           username: user?.username, // ✅ Send username to backend
         },

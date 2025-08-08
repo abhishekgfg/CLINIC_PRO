@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import axios from "axios";
+import axios from "../api/axios";
 import * as XLSX from "xlsx";
 
 // Add Patient Form Component
@@ -63,7 +63,7 @@ const PatientsSection = ({ patients, fetchData }) => {
     if (selectedPatients.length === 0) return alert("No patients selected.");
     if (!window.confirm("Are you sure you want to delete selected patients?")) return;
     for (const id of selectedPatients) {
-      await axios.delete(`/api/patients/delete/${id}`);
+      await axios.delete(`/patients/delete/${id}`);
     }
     await fetchData();
     setSelectedPatients([]);
@@ -76,7 +76,7 @@ const PatientsSection = ({ patients, fetchData }) => {
     const email = prompt("Edit Email", p.email);
     if (name && age && contact) {
       try {
-        await axios.put(`/api/patients/update/${p._id}`, { name, age, contact, email });
+        await axios.put(`/patients/update/${p._id}`, { name, age, contact, email });
         fetchData();
       } catch (err) {
         alert("Failed to update patient");
@@ -101,7 +101,7 @@ const PatientsSection = ({ patients, fetchData }) => {
         const jsonData = XLSX.utils.sheet_to_json(worksheet);
 
         for (const patient of jsonData) {
-          await axios.post("/api/patients/add", patient, { headers: { username: user?.username } });
+          await axios.post("/patients/add", patient, { headers: { username: user?.username } });
         }
 
         await fetchData();
@@ -124,7 +124,7 @@ const PatientsSection = ({ patients, fetchData }) => {
             ➕ Add New Patient
           </h2>
           <AddPatientForm onAdd={async (data) => {
-            await axios.post("/api/patients/add", data, {
+            await axios.post("/patients/add", data, {
               headers: { username: user?.username },
             });
             fetchData();
@@ -183,7 +183,7 @@ const PatientsSection = ({ patients, fetchData }) => {
                         className="status-dropdown"
                         onChange={async (e) => {
                           try {
-                            await axios.put(`/api/patients/update-status/${p._id}`, {
+                            await axios.put(`/patients/update-status/${p._id}`, {
                               status: e.target.value
                             });
                             fetchData();
@@ -206,7 +206,7 @@ const PatientsSection = ({ patients, fetchData }) => {
                           <button className="edit-btn" onClick={() => handleEdit(p)}>✏️ Edit</button>
                           <button className="delete-btn" onClick={async () => {
                             if (window.confirm("Delete this patient?")) {
-                              await axios.delete(`/api/patients/delete/${p._id}`);
+                              await axios.delete(`/patients/delete/${p._id}`);
                               fetchData();
                             }
                           }}>🗑️ Delete</button>

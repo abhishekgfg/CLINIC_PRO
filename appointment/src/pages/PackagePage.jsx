@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/PackagePage.css";
 
 const PackagePage = () => {
@@ -23,7 +23,7 @@ const PackagePage = () => {
 
   const fetchPackageData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/package/all");
+      const res = await axios.get("/package/all");
       setRecords(res.data);
     } catch (err) {
       console.error("Error fetching packaging data:", err);
@@ -43,7 +43,7 @@ const PackagePage = () => {
     if (!selectedStatus) return alert("Please select a package status.");
 
     try {
-      await axios.post("http://localhost:5000/api/package/save", {
+      await axios.post("/package/save", {
         ...r,
         packageStatus: selectedStatus,
       });

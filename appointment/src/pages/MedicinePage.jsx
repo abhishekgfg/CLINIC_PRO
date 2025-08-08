@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/MedicinePage.css";
 
 const MedicinePage = () => {
@@ -22,7 +22,7 @@ const MedicinePage = () => {
 
   const fetchRecords = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/medicine/all");
+      const res = await axios.get("/medicine/all");
       setRecords(res.data);
     } catch (err) {
       console.error("Error fetching medicine data:", err);
@@ -42,7 +42,7 @@ const MedicinePage = () => {
     if (!selectedStatus) return alert("Please select a status before saving.");
 
     try {
-      await axios.post("http://localhost:5000/api/medicine/save", {
+      await axios.post("/medicine/save", {
         accountId: r._id,
         displayId: r.displayId,
         patientName: r.patientName,

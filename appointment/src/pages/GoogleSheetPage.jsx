@@ -1,6 +1,6 @@
   import React, { useState, useEffect } from "react";
   import Sidebar from "../components/Sidebar";
-  import axios from "axios";
+  import axios from "../api/axios";
   import "../style/GoogleSheetPage.css";
 
   const GoogleSheetPage = () => {
@@ -41,7 +41,7 @@
       }
 
       try {
-        const res2 = await axios.get("/api/google-patients/all");
+        const res2 = await axios.get("/google-patients/all");
         setSavedData(res2.data);
       } catch (error) {
         console.error("Error fetching saved patient data:", error);
@@ -81,7 +81,7 @@
 
         setSheetData(formattedData);
 
-        await axios.post("/api/google-sheet", {
+        await axios.post("/google-sheet", {
           sheetUrl,
           sheetId,
           data: formattedData,
@@ -101,7 +101,7 @@
         const response = await axios.get(csvUrl);
         const formattedData = formatAndFilterData(response.data);
 
-        const res = await axios.post("/api/google-patients/import", formattedData);
+        const res = await axios.post("/google-patients/import", formattedData);
         console.log("✅ Synced:", res.data.message);
         fetchSavedSheet();
       } catch (error) {
@@ -111,7 +111,7 @@
 
     const handleStatusChange = async (id, newStatus) => {
       try {
-        await axios.patch(`/api/google-patients/${id}/status`, { status: newStatus });
+        await axios.patch(`/google-patients/${id}/status`, { status: newStatus });
         const updated = savedData.map((item) =>
           item._id === id ? { ...item, status: newStatus } : item
         );
@@ -124,7 +124,7 @@
     const handleRemoveConnection = async () => {
       if (!window.confirm("Are you sure you want to disconnect the sheet?")) return;
       try {
-        await axios.delete("/api/google-sheet");
+        await axios.delete("/google-sheet");
         setIsConnected(false);
         setSheetUrl("");       // ✅ Reset URL input
         setSheetData([]);      // ✅ Clear sheet data
@@ -138,7 +138,7 @@
     const handleDelete = async (id) => {
       if (!window.confirm("Delete this record?")) return;
       try {
-        await axios.delete(`/api/google-patients/${id}`);
+        await axios.delete(`/google-patients/${id}`);
         setSavedData(savedData.filter((item) => item._id !== id));
       } catch {
         alert("Delete failed.");

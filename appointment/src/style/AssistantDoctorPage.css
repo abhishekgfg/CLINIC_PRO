@@ -1,10 +1,14 @@
 /* Page Layout */
 .assistant-doctor-content {
-  width: 1000px;
-  margin-left: 250px;
+  margin-left: 250px; /* 👈 offset for fixed sidebar */
   padding: 20px;
   overflow-x: auto;
+  width: calc(100% - 250px); /* optional but ensures no overflow */
+  box-sizing: border-box;
 }
+
+
+/* Remove duplicate .assistant-doctor-content definition with fixed width */
 
 
 .assistant-doctor-content {
@@ -34,7 +38,7 @@
 }
 
 .assistant-doctor-table {
-  width: 100%;
+  width: 800px;
   min-width: 1200px;
   border-collapse: collapse;
   background-color: white;

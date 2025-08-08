@@ -1,50 +1,197 @@
+/* GoogleSheetSync.css */
+
 .sheet-sync-container {
   margin-top: 40px;
   margin-left: 250px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 600px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 700px;
   width: 100%;
-}
-
-.sheet-sync-container h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.sheet-sync-container input[type="text"] {
-  padding: 10px;
-  width: 100%;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 12px;
-}
-
-.sheet-sync-container button {
-  padding: 10px 18px;
-  background-color: #2ed573;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.sheet-sync-container .disconnect-btn {
-  background-color: #ff4757;
-}
-
-.sheet-sync-container .connected-status {
-  color: green;
-  margin-top: 12px;
-  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease;
+  font-family: "Segoe UI", sans-serif;
 }
 
 @media (max-width: 768px) {
   .sheet-sync-container {
     margin-left: 0 !important;
-    padding: 16px;
+    margin: 20px;
+    padding: 24px;
   }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #2f3542;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.sheet-sync-container input[type="text"] {
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.sheet-sync-container input[type="text"]:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.1);
+}
+
+.connect-btn,
+.disconnect-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.connect-btn {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.connect-btn:hover {
+  background-color: #1b7edc;
+  transform: translateY(-1px);
+}
+
+.disconnect-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.disconnect-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.connected-status {
+  margin-top: 16px;
+  font-size: 14px;
+  color: green;
+  font-weight: 500;
+}
+
+.service-account-box {
+  margin-top: 30px;
+  padding: 16px;
+  background-color: #f1f2f6;
+  border-left: 4px solid #1e90ff;
+  border-radius: 10px;
+}
+
+.service-account-box h4 {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2f3542;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.email-box code {
+  background-color: #ecf0f1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  background-color: #2ed573;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: #20bf6b;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.connected-status {
+  margin-top: 16px;
+  font-size: 14px;
+  color: green;
+  font-weight: 500;
+  word-break: break-all;   /* ⬅️ allow long strings to wrap */
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.service-account-box {
+  margin-top: 16px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.copy-btn {
+  align-self: flex-start; /* ⬅️ ensures it doesn't stretch full width */
+  padding: 28px 24px;
+  font-size: 13px;
+  background-color: #2f3542;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 120px;
+  width: 100%; /* ⬅️ allow to shrink in small view */
+  box-sizing: border-box;
+  white-space: nowrap; /* ⬅️ prevent text break */
+}
+
+.copy-btn:hover {
+  background-color: #1e272e;
 }

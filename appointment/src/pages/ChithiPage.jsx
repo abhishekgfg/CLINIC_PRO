@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/Chithi.css";
 
 const ChithiPage = () => {
@@ -24,7 +24,7 @@ const ChithiPage = () => {
 
   const fetchRecords = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/chithi/all");
+      const res = await axios.get("/chithi/all");
       const filtered = res.data.filter((r) => r.medicineStatus === "Medicine Ready");
       setRecords(filtered);
     } catch (err) {
@@ -45,7 +45,7 @@ const ChithiPage = () => {
     if (!selectedStatus) return alert("Please select a status before saving.");
 
     try {
-      await axios.post("http://localhost:5000/api/chithi/save", {
+      await axios.post("/chithi/save", {
         accountId: r._id,
         displayId: r.displayId,
         patientName: r.patientName,

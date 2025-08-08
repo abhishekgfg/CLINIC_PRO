@@ -10,9 +10,9 @@
 
 /* Content area */
 .content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Card for form and import */
@@ -48,9 +48,9 @@
   transition: background-color 0.3s ease;
 }
 
+
 .table-card {
-  width: 100%;
-  max-width: 950px;
+  width: calc(100% - 250px);
   margin-left: 250px;
   margin-right: auto;
   margin-top: 20px;
@@ -61,7 +61,19 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
   transition: all 0.3s ease;
+
+  position: relative; /* for absolute lines */
 }
+
+@media (max-width: 768px) {
+  .table-card {
+    width: 100%;
+    margin-left: 0;
+    padding: 15px;
+  }
+}
+
+
 @media (max-width: 768px) {
   .table-card {
     margin: 20px 10px;
@@ -159,6 +171,7 @@
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+   border-right: 1px solid #ddd;
   font-size: 14px;
 }
 

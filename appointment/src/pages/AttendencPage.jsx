@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../style/attendenc.css";
-import axios from "axios";
+import axios from "../api/axios";
 
-const API = "http://localhost:5000/api/attendenc";
+const API = "/attendenc";
 
 const AttendencPage = () => {
   const [employees, setEmployees] = useState([]);

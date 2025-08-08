@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
-import axios from "axios";
+import axios from "../api/axios";
 import "../style/CourierPage.css";
 
 const CourierPage = () => {
@@ -24,7 +24,7 @@ const CourierPage = () => {
 
   const fetchCourierData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/courier/all");
+      const res = await axios.get("/courier/all");
       setRecords(res.data);
     } catch (err) {
       console.error("Error fetching courier data:", err);
@@ -54,7 +54,7 @@ const CourierPage = () => {
     if (!update?.courierStatus) return alert("Select courier status");
 
     try {
-      await axios.post("http://localhost:5000/api/courier/save", {
+      await axios.post("/courier/save", {
         ...record,
         courierStatus: update.courierStatus,
         trackingId: update.trackingId || "",
